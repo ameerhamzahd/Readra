@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router';
 import Tag from '../Tag/Tag';
+import { addToStoredDatabase } from '../../utilities/databaseManagement';
 
 const BookDetails = () => {
     const { id } = useParams();
@@ -9,6 +10,10 @@ const BookDetails = () => {
     const targetedBook = data.find((book) => book.bookId === convertedId)
 
     const { image, bookName, author, category, review, tags, totalPages, publisher, yearOfPublishing, rating } = targetedBook;
+
+    const handleMarkAsRead = (id) => {
+        addToStoredDatabase(id);
+    }
 
     return (
         <div>
@@ -20,7 +25,7 @@ const BookDetails = () => {
                             className=" p-10 "
                         />
                     </div>
-                    <div className='flex flex-col gap-3 justify-center'>
+                    <div className='flex flex-col gap-3 '>
                         <h1 className="text-5xl font-bold">{bookName}</h1>
                         <p className='text-2xl font-medium pb-3 border-b-2 border-dashed border-gray-200'>By: {author}</p>
                         <p className='text-lg font-medium pb-3 border-b-2 border-dashed border-gray-200'>{category}</p>
@@ -50,8 +55,8 @@ const BookDetails = () => {
                         </div>
 
                         <div className='flex gap-3 pt-3'>
-                            <button className='btn'>Read</button>
-                            <button className='btn text-white bg-[#50B1C9] border-[#50B1C9] hover:text-[#50B1C9] hover:bg-white'>Wishlist</button>
+                            <button onClick={() => handleMarkAsRead(id)} className='btn'>Mark as Read</button>
+                            <button className='btn text-white bg-[#50B1C9] border-[#50B1C9] hover:text-[#50B1C9] hover:bg-white'>Watchlist</button>
                         </div>
                     </div>
                 </div>

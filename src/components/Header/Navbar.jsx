@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const Navbar = () => {
     return (
@@ -12,9 +13,9 @@ const Navbar = () => {
                         <ul
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                            <li><a>Home</a></li>
-                            <li><a>Listed Books</a></li>
-                            <li><a>Pages to Read</a></li>
+                            <Link to="/"><li><a>Home</a></li></Link>
+                            <Link to="/listed-books"><li><a href=''>Listed Books</a></li></Link>
+                            <Link to="/pages-to-read"><li><a>Pages to Read</a></li></Link>
                             <li className='gap-1 md:hidden'>
                                 <a className="btn bg-[#23BE0A] text-white hover:border hover:border-[#23BE0A] hover:text-[#23BE0A] hover:bg-white">Sign In</a>
                                 <a className="btn bg-[#59C6D2] text-white hover:border hover:border-[#23BE0A] hover:text-[#59C6D2] hover:bg-white">Sign Up</a>
@@ -25,9 +26,9 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        <li><a className='font-bold hover:border hover:border-[#23BE0A] hover:text-[#23BE0A] hover:bg-white'>Home</a></li>
-                        <li><a className='font-bold hover:border hover:border-[#23BE0A] hover:text-[#23BE0A] hover:bg-white'>Listed Books</a></li>
-                        <li><a className='font-bold hover:border hover:border-[#23BE0A] hover:text-[#23BE0A] hover:bg-white'>Pages to Read</a></li>
+                        <Link to="/"><li><a className='font-bold hover:border hover:border-[#23BE0A] hover:text-[#23BE0A] hover:bg-white'>Home</a></li></Link>
+                        <Link to="/listed-books"><li><a className='font-bold hover:border hover:border-[#23BE0A] hover:text-[#23BE0A] hover:bg-white'>Listed Books</a></li></Link>
+                        <Link to="/pages-to-read"><li><a className='font-bold hover:border hover:border-[#23BE0A] hover:text-[#23BE0A] hover:bg-white'>Pages to Read</a></li></Link>
                     </ul>
                 </div>
                 <div className="navbar-end gap-3 hidden md:flex">

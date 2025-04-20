@@ -56,7 +56,7 @@ const BookDetails = () => {
 
                         <div className='flex gap-3 pt-3'>
                             <button onClick={() => handleMarkAsRead(id)} className='btn'>Mark as Read</button>
-                            <button className='btn text-white bg-[#50B1C9] border-[#50B1C9] hover:text-[#50B1C9] hover:bg-white'>Watchlist</button>
+                            <button className='btn text-white bg-[#50B1C9] border-[#50B1C9] hover:text-[#50B1C9] hover:bg-white'>Wishlist</button>
                         </div>
                     </div>
                 </div>
